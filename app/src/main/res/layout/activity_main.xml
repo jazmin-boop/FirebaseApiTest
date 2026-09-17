@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#152238"
+    android:orientation="vertical">
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="28dp"
+        android:paddingBottom="24dp"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.15"
+            android:text="PANEL DE CONTROL"
+            android:textColor="#8899A6"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Gestión de Cursos"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Controla tus registros cloud con Firebase API"
+            android:textColor="#9AA0A6"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- TARJETA BLANCA FLOTANTE CON BORDES REDONDEADOS SUPERIORES -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- TÍTULO DE LA SECCIÓN Y ACCIÓN LIMPIAR -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Detalle del Curso"
+                        android:textColor="#1A233A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvLimpiar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Limpiar"
+                        android:textColor="#7A8B9E"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- CAMPO BÚSQUEDA POR ID CON BOTÓN INTEGRADO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_input_rounded"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <EditText
+                        android:id="@+id/etIdCurso"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Ingrese ID para buscar / editar"
+                        android:textColor="#333333"
+                        android:textColorHint="#A0AAB5"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btnBuscarId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:backgroundTint="#152238"
+                        android:text="Buscar ID"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+
+                <!-- CAMPO NOMBRE DEL CURSO -->
+                <EditText
+                    android:id="@+id/etNombreCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_input_rounded"
+                    android:hint="Nombre del curso"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#A0AAB5"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- CAMPO GRADO -->
+                <EditText
+                    android:id="@+id/etGrado"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_input_rounded"
+                    android:hint="Grado"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#A0AAB5"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- BOTONERA FILA 1: GUARDAR Y ACTUALIZAR -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginRight="6dp"
+                        android:backgroundTint="#152238"
+                        android:text="GUARDAR"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+
+                    <Button
+                        android:id="@+id/btnActualizar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="6dp"
+                        android:backgroundTint="#EBF3FE"
+                        android:text="ACTUALIZAR"
+                        android:textColor="#1A73E8"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+                <!-- BOTONERA FILA 2: LISTAR Y ELIMINAR -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btnListar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginRight="6dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:text="LISTAR"
+                        android:textColor="#152238"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:strokeColor="#D0D7DE"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp" />
+
+                    <Button
+                        android:id="@+id/btnEliminar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="6dp"
+                        android:backgroundTint="#FFEBEE"
+                        android:text="ELIMINAR"
+                        android:textColor="#D32F2F"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+                <!-- VISOR DE RESULTADOS JSON VERTICAL -->
+                <TextView
+                    android:id="@+id/tvResultado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA"
+                    android:fontFamily="monospace"
+                    android:padding="12dp"
+                    android:text="El JSON de la API aparecerá aquí..."
+                    android:textColor="#333333"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
